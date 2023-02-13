@@ -1,0 +1,52 @@
+.client {
+  padding-bottom: 125px;
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: 90px;
+    margin-top: 67px;
+  }
+  &__img {
+    width: 40%;
+  }
+  &__say {
+    width: 60%;
+    &-comment {
+      @include text(400,25px,35px);
+      letter-spacing: 0.5px;
+      color: #363853;
+    }
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 74px;
+    }
+    &-name {
+      @include text(500,20px,24px);
+      color: $orange;
+    }
+    &-hobby {
+      @include text(400,14px,17px);
+      color: #AAAAAA;
+      margin-top: 18px;
+    }
+    &-btns {
+      display: flex;
+      column-gap: 54px;
+    }
+    &-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      svg path {
+        stroke: #363853;
+      }
+      &:hover {
+        svg path {
+          stroke: #FF7A50;
+        }
+      }
+    }
+  }
+}
