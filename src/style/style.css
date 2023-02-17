@@ -251,9 +251,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 279px;
-     -moz-column-gap: 279px;
-          column-gap: 279px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .header__menu {
   display: -webkit-box;
@@ -312,6 +312,135 @@ body {
   color: #FF7A50;
 }
 
+.burger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  cursor: pointer;
+}
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #363853;
+  position: relative;
+}
+.burger__line::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #363853;
+  position: absolute;
+  left: 0;
+  top: -11px;
+}
+.burger__line::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #363853;
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 30px 0;
+  }
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .burger.active .burger__line {
+    background: transparent;
+  }
+  .burger.active .burger__line::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 0;
+    background: #FFFFFF;
+  }
+  .burger.active .burger__line::after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    bottom: 0;
+    background: #FFFFFF;
+  }
+  .header__menu {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: #FF7A50;
+    width: 100%;
+    padding: 30px;
+    border-radius: 0 0 40px 40px;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+  }
+  .header__menu svg path {
+    stroke: #FFFFFF;
+  }
+  .header__menu svg ellipse {
+    stroke: #FFFFFF;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+  .header__list-link {
+    color: #FFFFFF;
+  }
+  .header__btn {
+    background: #FFFFFF;
+    color: #FF7A50;
+  }
+}
+@media (max-width: 768px) {
+  .header__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .header__menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .header__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .header__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+  }
+}
 .fast {
   padding: 104px 0 94px;
 }
@@ -374,6 +503,65 @@ body {
   width: 50%;
 }
 
+@media (max-width: 1024px) {
+  .fast__info-title {
+    font-size: 60px;
+  }
+}
+@media (max-width: 992px) {
+  .fast__info-title {
+    font-size: 58px;
+  }
+  .fast__info-text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 886px) {
+  .fast__info-title {
+    font-size: 51px;
+    line-height: 58px;
+  }
+  .fast__info-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+@media (max-width: 768px) {
+  .fast__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+  }
+  .fast__info-text {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .fast__info-btns {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 425px) {
+  .fast__info-title {
+    font-size: 49px;
+  }
+}
+@media (max-width: 375px) {
+  .fast__info-title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .fast__info-text {
+    width: 100%;
+  }
+  .fast__img {
+    width: 100%;
+  }
+}
 .category {
   padding-bottom: 87px;
 }

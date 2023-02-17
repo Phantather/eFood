@@ -56,3 +56,11 @@ btnRegister.addEventListener('click', () => {
 popupClose.addEventListener('click', () => {
     overlay.style.display = 'none'
 })
+
+let burger = document.querySelector('.burger')
+let menu = document.querySelector('.header__menu')
+
+burger.addEventListener("click" , () => {
+    menu.classList.toggle('active')
+    burger.classList.toggle('active')
+})

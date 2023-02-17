@@ -3,13 +3,12 @@
   &__nav{
     display: flex;
     align-items: center;
-    column-gap: 279px;
+    justify-content: space-between;
   }
   &__menu{
     display: flex;
     align-items: center;
     column-gap: 60px;
-
   }
   &__list{
     display: flex;
@@ -47,5 +46,132 @@
       color: #FF7A50;
     }
   }
+}
 
+
+//1440 - 1321 - 1440
+//1320 - 1201 - 1320
+//1200 - 1025 - 1200
+//1024 - 993 - 1024
+//992 - 887
+// 886 - 769
+// 768 - 677
+// 676 - 577
+// 576 - 501
+// 500 - 426
+// 425 - 376
+// 375 -
+
+.burger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  cursor: pointer;
+  &__line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #363853;
+    position: relative;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 3px;
+      background: #363853;
+      position: absolute;
+      left: 0;
+      top: -11px;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 3px;
+      background: #363853;
+      position: absolute;
+      left: 0;
+      bottom: -11px;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  .header {
+    padding: 30px 0;
+  }
+  .burger {
+    display: flex;
+    &.active {
+      .burger__line{
+        background: transparent;
+      }
+      .burger__line::before {
+        transform: rotate(-45deg);
+        top: 0;
+        background: #FFFFFF;
+      }
+      .burger__line::after {
+        transform: rotate(45deg);
+        bottom: 0;
+        background: #FFFFFF;
+      }
+    }
+  }
+  .header__menu {
+    svg path {
+      stroke: #FFFFFF;
+    }
+    svg ellipse {
+      stroke: #FFFFFF;
+    }
+    justify-content: center;
+    background: #FF7A50;
+    width: 100%;
+    padding: 30px;
+    border-radius: 0 0 40px 40px;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    transition: .5s all;
+    &.active {
+      top: 0;
+    }
+  }
+  .header__list-link {
+    color: #FFFFFF;
+  }
+  .header__btn {
+    background: #FFFFFF;
+    color: $orange;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header__menu {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header__menu {
+    flex-direction: row;
+  }
+  .header__list {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header__menu {
+    flex-direction: column;
+    row-gap: 20px;
+  }
 }
